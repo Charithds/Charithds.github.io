@@ -1,0 +1,95 @@
+.life {
+  padding: 120px 0;
+  background: #e8e7e2;
+  border-top: 1px solid var(--line);
+}
+
+.life-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 10vw;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.life-heading h2 {
+  margin: 0;
+  font-size: clamp(50px, 6vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -4px;
+}
+
+.life-heading p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.interest {
+  min-height: 210px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.interest span {
+  color: var(--blue);
+  font: 700 8px var(--mono);
+}
+
+.interest strong {
+  margin-top: auto;
+  font-size: 22px;
+}
+
+.interest small {
+  margin-top: 4px;
+  color: var(--muted);
+  font: 9px var(--mono);
+}
+
+.interest.warm {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+.interest.blue {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+
+.interest.blue span,
+.interest.blue small {
+  color: #dce2ff;
+}
+
+.interest.dark {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+}
+
+.interest.dark span { color: var(--lime); }
+.interest.dark small { color: #a8abb4; }
+
+@media (max-width: 850px) {
+  .life-heading { grid-template-columns: 1fr; gap: 25px; }
+  .interest-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .life { padding: 85px 0; }
+  .life-heading h2 { font-size: 48px; letter-spacing: -3px; }
+  .interest { min-height: 160px; }
+}
