@@ -11,15 +11,49 @@ h1 { font-size: clamp(52px, 5.5vw, 76px); line-height: 1.01; letter-spacing: -4p
 .life-heading p { font-size: 15px; line-height: 1.7; }
 .case h3 { font-size: clamp(27px, 2.7vw, 38px); }
 .case p { font-size: 15px; line-height: 1.65; }
+.case-top {
+  align-items: center;
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: 0.6px;
+}
+.case-top b { font-size: 28px; }
 .case footer span,
-.tags span { font-size: 9px; }
-.career-line { font-size: 9px; }
+.tags span { padding: 7px 11px; font-size: 10px; }
+.career-line {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 36px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.career-line span {
+  min-height: 82px;
+  padding: 16px 18px;
+  white-space: normal;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-right: 0;
+}
+.career-line span:first-child { border-radius: 8px 0 0 8px; }
+.career-line span:last-child { border-right: 1px solid var(--line); border-radius: 0 8px 8px 0; }
+.career-line b {
+  margin-bottom: 6px;
+  color: var(--blue);
+  font: 700 10px var(--mono);
+  letter-spacing: 0.4px;
+}
+.career-line i { display: none; }
 .tool-list span { font-size: 13px; }
 .credential-stack h3 { font-size: 17px; }
 .credential-stack p { font-size: 12px; }
-.credential-stack b,
+.credential-stack b { font-size: 10px; line-height: 1.5; }
 .label,
-.section-kicker { font-size: 9px; }
+.section-kicker { font-size: 10px; line-height: 1.5; }
+.tool-title { font-size: 11px; }
 .life-heading h2 { font-size: clamp(42px, 4.5vw, 62px); letter-spacing: -2.7px; }
 .interest strong { font-size: 21px; }
 .interest small { font-size: 10px; }
@@ -96,6 +130,11 @@ nav a.active::after { transform: scaleX(1); }
   .life-heading h2 { font-size: 38px; line-height: 1.08; letter-spacing: -2px; }
   .case h3 { font-size: 27px; }
   .case { min-height: 350px; }
+  .case-top { font-size: 10px; }
+  .career-line { grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; }
+  .career-line span,
+  .career-line span:first-child,
+  .career-line span:last-child { min-height: 78px; border: 1px solid var(--line); border-radius: 7px; }
   .interest { min-height: 145px; }
   nav a:not(.contact-pill)::after { display: none; }
 }
