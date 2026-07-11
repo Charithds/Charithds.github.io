@@ -29,17 +29,19 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 
 if (!reducedMotion) {
   const board = document.querySelector('.system-board');
-  board.addEventListener('pointermove', (event) => {
-    const bounds = board.getBoundingClientRect();
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-    board.style.setProperty('--ry', `${x * 5}deg`);
-    board.style.setProperty('--rx', `${y * -5}deg`);
-  });
-  board.addEventListener('pointerleave', () => {
-    board.style.setProperty('--ry', '0deg');
-    board.style.setProperty('--rx', '0deg');
-  });
+  if (board) {
+    board.addEventListener('pointermove', (event) => {
+      const bounds = board.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      board.style.setProperty('--ry', `${x * 5}deg`);
+      board.style.setProperty('--rx', `${y * -5}deg`);
+    });
+    board.addEventListener('pointerleave', () => {
+      board.style.setProperty('--ry', '0deg');
+      board.style.setProperty('--rx', '0deg');
+    });
+  }
 
   document.querySelectorAll('.case, .interest').forEach((card) => {
     card.addEventListener('pointermove', (event) => {

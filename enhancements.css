@@ -76,6 +76,39 @@ h1 { font-size: clamp(52px, 5.5vw, 76px); line-height: 1.01; letter-spacing: -4p
 }
 .page-footer a:hover { color: var(--blue); transform: translateY(-2px); }
 .page-footer .status-dot { width: 8px; height: 8px; }
+.intro-card {
+  padding: 28px;
+  background: #fffefa;
+  border: 1px solid #bfc0c4;
+  border-radius: 18px;
+  box-shadow: 14px 16px 0 #dcd9d2;
+  transform: rotate(1deg);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.intro-card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 18px 21px 0 #d5d2cb; }
+.intro-top { display: flex; gap: 20px; align-items: center; padding-bottom: 24px; border-bottom: 1px dashed var(--line); }
+.intro-avatar {
+  position: relative;
+  width: 94px;
+  height: 94px;
+  flex: 0 0 94px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--blue);
+  border-radius: 26px;
+  font-size: 31px;
+  font-weight: 800;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.intro-avatar span { position: absolute; right: -13px; top: -15px; font-size: 28px; transform: rotate(12deg); }
+.intro-top small { color: var(--blue); font: 700 9px var(--mono); letter-spacing: .8px; }
+.intro-top h2 { margin: 5px 0 0; font-size: 25px; letter-spacing: -1px; }
+.intro-notes { display: grid; gap: 10px; padding: 22px 0; }
+.intro-notes p { margin: 0; padding: 13px 14px; background: #f0eee8; border-radius: 8px; font-size: 13px; line-height: 1.5; }
+.intro-notes span { display: block; margin-bottom: 3px; color: var(--blue); font: 700 9px var(--mono); text-transform: uppercase; }
+.intro-signoff { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font: 10px var(--mono); }
+.intro-signoff b { display: grid; place-items: center; width: 31px; height: 31px; color: var(--ink); background: var(--lime); border-radius: 50%; font-size: 16px; }
 
 nav a { position: relative; }
 nav a:not(.contact-pill)::after {
@@ -155,6 +188,10 @@ nav a.active::after { transform: scaleX(1); }
   .career-line span:first-child,
   .career-line span:last-child { min-height: 78px; border: 1px solid var(--line); border-radius: 7px; }
   .interest { min-height: 145px; }
+  .intro-card { padding: 21px; box-shadow: 9px 11px 0 #dcd9d2; }
+  .intro-avatar { width: 76px; height: 76px; flex-basis: 76px; border-radius: 20px; font-size: 26px; }
+  .intro-top h2 { font-size: 22px; }
+  .intro-notes p { font-size: 12px; }
   .page-footer { gap: 18px; font-size: 13px; }
   nav a:not(.contact-pill)::after { display: none; }
 }
